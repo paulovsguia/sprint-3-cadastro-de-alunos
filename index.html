@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de alunos</title>
+    <link rel="icon" type="image/png" href="./images/icon.png"/>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-emerald-100 font-serif">
+    <header class="bg-emerald-600">
+        <h1 class="p-10 font-bold text-white text-5xl">Cadastro de alunos</h1>
+    </header>
+    <main class="flex justify-center mt-17">
+        <div class="flex flex-col items-center">
+            <h2 class="pt-10 font-bold text-slate-500 text-4xl">Sistema de cadastro de alunos</h2>
+            <h3 class="pt-7 font-bold text-slate-500 text-2xl">Preencha abaixo com os dados do aluno</h3>
+            <form class="flex flex-col">
+                <label class="mt-3 text-slate-500">Nome</label>
+                <input class="bg-white w-100 h-8 mt-2" type="text" id="first-name">
+                <label class="mt-3 text-slate-500">Sobrenome</label>
+                <input class="bg-white w-100 h-8 mt-2" type="text" id="last-name">
+                <label class="mt-3 text-slate-500">Turma</label>
+                <select name="class" class="bg-white w-45 h-8 mt-2 text-slate-500" id="class">
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+                <label class="mt-3 text-slate-500">Nota 1</label>
+                <input class="bg-white w-45 h-8 mt-2" type="number" id="grade1">
+                <label class="mt-3 text-slate-500">Nota 2</label>
+                <input class="bg-white w-45 h-8 mt-2" type="number" id="grade2">
+            </form>
+            <div>
+                <button class="mt-15 bg-emerald-500 text-white w-50 h-10 mx-auto hover:cursor-pointer hover:bg-emerald-600" id="register">Cadastrar</button>
+            </div>
+            
+            <div class="flex justify-between font-bold text-slate-500 text-3x1 w-160 mt-14">
+                <p>Alunos cadastrados: <span id="cadastrados">0</span></p>
+                <p>Alunos aprovados: <span id="aprovados">0</span></p>
+                <p>Alundos reprovados: <span id="reprovados">0</span></p>
+            </div>
+
+            <div class="mt-15 bg-red-500 max-h-200 border border-white flex flex-col">
+                <div class="flex bg-slate-500">
+                    <div class="w-50 border border-slate-500 text-center text-white">Nome</div>
+                    <div class="w-25 border border-slate-500 text-center text-white">Turma</div>
+                    <div class="w-25 border border-slate-500 text-center text-white">Nota 1</div>
+                    <div class="w-25 border border-slate-500 text-center text-white">Nota 2</div>
+                    <div class="w-25 border border-slate-500 text-center text-white">Média</div>
+                    <div class="w-25 border border-slate-500 text-center text-white">Situação</div>
+                </div>
+                <div id="table-body" class="max-h-[150px] overflow-auto">
+                    <div class="bg-gray-300">
+                        <div class="w-100vw border text-center text-slate-500">Nenhum aluno cadastrado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="h-22 mt-22 bg-emerald-600"></footer>
+    <script src="./script.js"></script>
+</body>
+</html>
